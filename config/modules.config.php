@@ -32,4 +32,5 @@ return [
     'StatusLib',
     'Application',
     'Status',
+    'School_Classes_Management',
 ];
