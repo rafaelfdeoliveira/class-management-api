@@ -1,5 +1,5 @@
 <?php
-namespace School_Classes_Management;
+namespace School_class_management_API;
 
 use Laminas\ApiTools\Provider\ApiToolsProviderInterface;
 

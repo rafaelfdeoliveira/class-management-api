@@ -1,20 +1,12 @@
 <?php
-namespace Status\V1\Rest\Status;
+namespace School_class_management_API\V1\Rest\Student;
 
-use StatusLib\MapperInterface;
 use Laminas\ApiTools\ApiProblem\ApiProblem;
 use Laminas\ApiTools\Rest\AbstractResourceListener;
 use Laminas\Stdlib\Parameters;
 
-class StatusResource extends AbstractResourceListener
+class StudentResource extends AbstractResourceListener
 {
-    protected $mapper;
-
-    public function __construct(MapperInterface $mapper)
-    {
-        $this->mapper = $mapper;
-    }
-
     /**
      * Create a resource
      *
@@ -23,7 +15,7 @@ class StatusResource extends AbstractResourceListener
      */
     public function create($data)
     {
-        return $this->mapper->create($data);
+        return new ApiProblem(405, 'The POST method has not been defined');
     }
 
     /**
@@ -34,7 +26,7 @@ class StatusResource extends AbstractResourceListener
      */
     public function delete($id)
     {
-        return $this->mapper->delete($id);
+        return new ApiProblem(405, 'The DELETE method has not been defined for individual resources');
     }
 
     /**
@@ -56,7 +48,7 @@ class StatusResource extends AbstractResourceListener
      */
     public function fetch($id)
     {
-        return $this->mapper->fetch($id);
+        return new ApiProblem(405, 'The GET method has not been defined for individual resources');
     }
 
     /**
@@ -67,7 +59,7 @@ class StatusResource extends AbstractResourceListener
      */
     public function fetchAll($params = [])
     {
-        return $this->mapper->fetchAll();
+        return new ApiProblem(405, 'The GET method has not been defined for collections');
     }
 
     /**
@@ -79,7 +71,7 @@ class StatusResource extends AbstractResourceListener
      */
     public function patch($id, $data)
     {
-        return $this->mapper->update($id, $data);
+        return new ApiProblem(405, 'The PATCH method has not been defined for individual resources');
     }
 
     /**
@@ -113,6 +105,6 @@ class StatusResource extends AbstractResourceListener
      */
     public function update($id, $data)
     {
-        return $this->mapper->update($id, $data);
+        return new ApiProblem(405, 'The PUT method has not been defined for individual resources');
     }
 }

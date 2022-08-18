@@ -1,16 +1,18 @@
 <?php
-namespace School_Classes_Management\V1\Rest\School_Class;
+namespace School_class_management_API\V1\Rest\SchoolClass;
 
-use School_Classes_Management\V1\Rest\School_Class\School_ClassCollection;
+use Exception;
+use Error;
+use InvalidArgumentException;
 use Laminas\ApiTools\ApiProblem\ApiProblem;
 use Laminas\ApiTools\Rest\AbstractResourceListener;
 use Laminas\Stdlib\Parameters;
 
-class School_ClassResource extends AbstractResourceListener
+class SchoolClassResource extends AbstractResourceListener
 {
-    protected $mapper;
+    private SchoolClassMapperInterface $mapper;
 
-    public function __construct(School_ClassCollection $mapper)
+    public function __construct(SchoolClassMapperInterface $mapper)
     {
         $this->mapper = $mapper;
     }
@@ -23,7 +25,13 @@ class School_ClassResource extends AbstractResourceListener
      */
     public function create($data)
     {
-        return $this->mapper->create($data);
+        try {
+            return $this->mapper->createSchoolClass($data->name, $data->grade);
+        } catch (InvalidArgumentException $ex) {
+            return new ApiProblem(456, $ex->getMessage());
+        } catch (Exception|Error $ex) {
+            return new ApiProblem(500, 'Uups');
+        }
     }
 
     /**
@@ -34,7 +42,7 @@ class School_ClassResource extends AbstractResourceListener
      */
     public function delete($id)
     {
-        
+        return new ApiProblem(405, 'The DELETE method has not been defined for individual resources');
     }
 
     /**

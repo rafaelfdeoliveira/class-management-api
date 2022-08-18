@@ -29,6 +29,7 @@
     },
     "require": {
         "php": "^7.3 || ~8.0.0 || ~8.1.0",
+        "doctrine/doctrine-orm-module": "^5.2",
         "laminas-api-tools/api-tools": "^1.6.0",
         "laminas-api-tools/api-tools-content-negotiation": "^1.6.0",
         "laminas-api-tools/api-tools-doctrine": "*",
@@ -64,7 +65,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/"
+            "Application\\": "module/Application/src/",
+            "School_class_management_API\\": "module/School_class_management_API/src/"
         }
     },
     "autoload-dev": {

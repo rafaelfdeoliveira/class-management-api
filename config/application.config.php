@@ -23,4 +23,18 @@ return [
         'module_map_cache_enabled' => true,
         'cache_dir'                => 'data/cache/',
     ],
+    // 'doctrine' => [
+    //     'connection' => [
+    //         'orm_default' => [
+    //             'driverClass' => \Doctrine\DBAL\Driver\PDO\MySQL\Driver::class,
+    //             'params' => [
+    //                 'host' => 'db',
+    //                 'port' => '3306',
+    //                 'user' => 'root',
+    //                 'password' => 'kuau',
+    //                 'dbname' => 'school-classes-management',
+    //             ],
+    //         ],
+    //     ],
+    // ],
 ];

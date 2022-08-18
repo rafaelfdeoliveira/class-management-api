@@ -6,6 +6,8 @@
  * The previous config file has been stored in ./config/modules.config.old
  */
 return [
+    'Laminas\\Cache',
+    'Laminas\\Form',
     'Laminas\\Mvc\\I18n',
     'Laminas\\I18n',
     'Laminas\\ComposerAutoloading',
@@ -30,7 +32,8 @@ return [
     'Laminas\\ApiTools\\Versioning',
     'Laminas\\ZendFrameworkBridge',
     'StatusLib',
+    'DoctrineModule',
+    'DoctrineORMModule',
     'Application',
-    'Status',
-    'School_Classes_Management',
+    'School_class_management_API',
 ];
